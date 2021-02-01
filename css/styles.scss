@@ -1,0 +1,547 @@
+// Fonts
+
+
+@font-face {
+	font-family: 'Roboto-Regular';
+	src: url('../fonts/Roboto-Regular.eot');
+	src: local('☺'), url('../fonts/Roboto-Regular.woff') format('woff'), url('../fonts/Roboto-Regular.ttf') format('truetype'), url('../fonts/Roboto-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Montserrat-Bold";
+	src: url("../fonts/Montserrat-Bold.eot");
+	src: local("☺"), url("../fonts/Montserrat-Bold.woff") format("woff"),
+		url("../fonts/Montserrat-Bold.ttf") format("truetype"), url("../fonts/Montserrat-Bold.svg") format("svg");
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Montserrat-Regular";
+	src: url("../fonts/Montserrat-Regular.eot");
+	src: local("☺"), url("../fonts/Montserrat-Regular.woff") format("woff"),
+		url("../fonts/Montserrat-Regular.ttf") format("truetype"), url("../fonts/Montserrat-Regular.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+// Fonts End
+
+@import "base/base";
+@import "base/mixins";
+
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+
+	display: flex;
+	flex-direction: column;
+}
+.content {
+	flex: 1 1 auto;
+}
+.container {
+	max-width: 960px;
+	padding: 0 10px;
+	margin: 0 auto;
+}
+hr {
+	height: 2px;
+	background: #ff4e50;
+}
+
+.main {
+	@include backgroundImg (cover, center, no-repeat);
+	background-image: url(../img/img-desctop/background-LG.png);
+	width: 100%;
+	// max-width: 1440px;
+	// margin: 0 auto;
+	height: 100vh;
+	overflow-x: hidden;
+	&__menu {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 45px;
+		&__logo {
+			max-width: 152px;
+			&-img {
+				font-size: 20px;
+			}
+		}
+		&__subscribe {
+			&-logIn {
+				@include fontSize ( "Montserrat-Regular", 13px, #ffffff);
+				background-color: transparent;
+			}
+			&-signUp {
+				@include fontSize ( "Montserrat-Regular", 13px, #ffffff);
+				background-color: transparent;
+				width: 90px;
+				height: 36px;
+				border: 2px solid #ffffff;
+				border-radius: 40px;
+				margin-left: 20px;
+			}
+		}
+	}
+	
+	&-title {
+		@include fontSize ("Montserrat-Bold", calc(30px + 22 * ((100vw - 320px) / 1440)), #ffffff);
+		line-height: calc(37px + 26 * ((100vw - 320px) / 1440));
+		max-width: calc(272px + 198 * ((100vw - 320px) / 1440));
+		text-align: center;
+		margin: 153px auto 0;
+	}
+	&-subtitle {
+		@include fontSize ("Roboto-Light", calc(18px + 8 * ((100vw - 320px) / 1440)), #f7f3f2);
+		line-height: 33px;
+		text-align: center;
+		margin-top: 29px;
+	}
+	&-btn{
+		width: 225px;
+		height: 40px;
+		background: #FF4E50;
+		border-radius: 40px;
+		margin: 33px auto 0;
+		text-align: center;
+		&-button{
+			@include fontSize ( "Montserrat-Bold", 14px, #ffffff);
+			background-color: transparent;
+			line-height: 40px;
+		}
+	}
+	&-btn:hover{
+		background: #FFf;
+	}
+	&-btn:hover .main-btn-button{
+		color: #FF4E50;
+	}
+}
+
+
+
+.title {
+	@include sectionTitle("Montserrat-Bold", calc(22px + 4 * ((100vw - 320px) / 1440)), 27px, #444444, calc(23px + 20 * ((100vw - 320px) / 1440)));
+}
+
+
+
+.works {
+	padding: 90px 0 45px;
+	&__body {
+		text-align: center;
+		&__row {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			text-align: start;
+			&__card {
+				@include backgroundImg (cover, center, no-repeat);
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				padding: 25px;
+				margin: 20px 0 0;
+				width: 32%;
+				height: 400px;
+				&__button{
+					width: 70px;
+					height: 20px;
+					background: #FF4E50;
+					border-radius: 40px;
+					padding: 0 11px;
+					&-btn{
+						font-family: "Montserrat-Bold";
+						font-size: 10px;
+						color: #FFFFFF;
+						line-height: 20px;
+						letter-spacing: 2px;
+						background-color: transparent;
+					}
+				}
+				&-title {
+					line-height: 26px;
+					margin-top: 20px;
+					@include fontSize ("Montserrat-Bold", 22px, #ffffff);
+				}
+				&-text{
+					font-family: "Roboto-Light";
+					font-size: 14px;
+					line-height: 14px;
+					color: #E3E3E3;
+					margin-top: 15px;
+				}
+			}
+		}
+	}
+}
+
+.step1{
+	background-image: url(../img/img-desctop/Step-1lg.png);
+}
+
+.step2{
+	background-image: url(../img/img-desctop/Step-2lg.png);
+}
+
+.step3{
+	background-image: url(../img/img-desctop/Step-3lg.png);
+}
+
+
+.partner{
+	padding: 40px 0 45px;
+	&__body {
+		text-align: center;
+		&__row {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			&__card{
+				width: 221px;
+				margin: 20px 0 0;
+				&-img{
+					height: 120px;
+					width: 120px;
+				}
+				&-name{
+					@include fontSize ("Montserrat-Bold", 14px, #444444);
+					margin-top: 17px;
+				}
+				&-info{
+					@include fontSize ("Roboto-Light", 14px, #666666);
+					line-height: 17px;
+					margin-top: 17px;
+					max-width: 220px;
+				}
+			}
+		}
+	}
+}
+
+.activity {
+	padding: 40px 0 45px;
+	&__body {
+		text-align: center;
+		&__row {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			&__card {
+				margin: 20px 0 0;
+				@include backgroundImg (cover, center, no-repeat);
+				width: 32%;
+				height: 310px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				&-title {
+					padding: 0 10px;
+					@include fontSize ("Montserrat-Bold", 22px, #ffffff);
+				}
+			}
+		}
+	}
+}
+
+.sport{
+	background-image: url(../img/img-desctop/Sport-lg.png);
+}
+
+.health{
+	background-image: url(../img/img-desctop/Healath-lg.png);
+}
+
+.expeditions{
+	background-image: url(../img/img-desctop/Extreme-lg.png);
+	line-height: 27px;
+}
+
+.games{
+	background-image: url(../img/img-desctop/Games-lg.png);
+}
+
+.culture{
+	background-image: url(../img/img-desctop/Culture-lg.png);
+	width: 66%;
+}
+
+.relaxation{
+	background-image: url(../img/img-desctop/Relaxation-lg.png);
+	width: 66%;
+}
+
+.traveling{
+	background-image: url(../img/img-desctop/Travelling-lg.png);
+}
+
+
+
+.holiday__form{
+	padding: 40px 0 100px;
+	&__body{
+		text-align: center;
+		&-subtitle{
+			@include fontSize ('Roboto-Light', 18px, #666666);
+			line-height: 14px;
+		}
+		&__row{
+			margin-top: 25px;
+			&-form{
+				padding: 0 7px;
+				width: 300px;
+				height: 40px;
+				background: #FFFFFF;
+				border: 1px solid #D4D4D4;
+				box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+				border-radius: 3px;
+				margin-right: 10px;
+			}
+			&-btn{
+				width: 173px;
+				height: 40px;
+				background: #FF4E50;
+				border-radius: 40px;
+				font-family: 'Montserrat-Bold';
+				font-size: 14px;
+				color: #FFFFFF;
+			}
+		}
+	}
+}
+
+
+
+.footer {
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding: 40px 0 35px;
+		&__design {
+			padding: 0 15px;
+			&-logo {
+				max-width: 110px;
+			}
+		}
+		&__company {
+			padding: 0 15px;
+			&-title {
+				@include fontSize ("Montserrat-Bold", 14px, #444444);
+			}
+			&__list {
+				&-item {
+					margin-top: 20px;
+					&-link {
+						font-family: "Roboto-Light";
+						font-size: 14px;
+						color: #999999;
+					}
+					&-link:hover {
+						color: #ff4e50;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+		&__partners {
+			padding: 0 15px;
+			&-title {
+				@include fontSize ("Montserrat-Bold", 14px, #444444);
+			}
+		}
+		&__design {
+			padding: 0 15px;
+			&-title {
+				@include fontSize ("Montserrat-Bold", 10px, #cccccc);
+				margin-left: 33px;
+				letter-spacing: 1px;
+			}
+			&-logo {
+				margin-top: 8px;
+			}
+		}
+	}
+}
+
+@media (max-width: 904px){
+	.partner__body__row {
+		justify-content: space-around;
+		max-width: 650px;
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: 768px) {
+	.main {
+		background-image: url(../img/img-mobile/Background-m.png);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		width: 100%;
+	}
+
+	.footer {
+		&__row {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			&__company {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding: 0 15px;
+				margin-top: 20px;
+				&__list {
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					justify-content: center;
+					max-width: 280px;
+					&-item {
+						margin: 15px 15px 0;
+					}
+				}
+			}
+			&__partners {
+				margin-top: 20px;
+			}
+			&__design {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin-top: 20px;
+				&-title {
+					margin: 0;
+				}
+				&-logo {
+					margin-top: 8px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.main {
+		background-image: url(../img/img-mobile/Background-m.png);
+		width: 100%;
+		&__menu {
+			display: flex;
+			flex-direction: column-reverse;
+			justify-content: space-between;
+			align-items: center;
+			&__logo {
+				margin-top: 160px;
+			}
+		}
+		&-title {
+			margin: 60px auto 0;
+		}
+		&-subtitle {
+			max-width: 260px;
+			margin: 0 auto;
+		}
+	}
+
+	.works {
+		padding: 35px 0 15px;
+		&__body {
+			text-align: center;
+			&__row {
+				justify-content: space-around;
+				&__card {
+					width: 90%;
+					height: 240px;
+				}
+			}
+		}
+	}
+
+	.step1{
+		background-image: url(../img/img-mobile/Step1.png);
+	}
+	
+	.step2{
+		background-image: url(../img/img-mobile/Step2.png);
+	}
+	
+	.step3{
+		background-image: url(../img/img-mobile/Step3.png);
+	}
+
+	.partner__body__row {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.activity {
+		padding: 20px 0 15px;
+		&__body {
+			&-title{
+				margin: 0 auto;
+				max-width: 280px;
+			}
+			text-align: center;
+			&__row__card {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-around;
+				width: 90%;
+				height: 120px;
+				margin: 20px auto 0;
+			}
+		}
+	}
+
+	.sport{
+		background-image: url(../img/img-mobile/Sport.png);;
+	}
+	
+	.health{
+		background-image: url(../img/img-mobile/Healath.png);
+	}
+	
+	.expeditions{
+		background-image: url(../img/img-mobile/Extreme.png);
+	}
+	
+	.games{
+		background-image: url(../img/img-mobile/Games.png);
+	}
+	
+	.culture{
+		background-image: url(../img/img-mobile/Culture.png);
+	}
+	
+	.relaxation{
+		background-image: url(../img/img-mobile/relaxation.png);
+
+	}
+	
+	.traveling{
+		background-image: url(../img/img-mobile/travelling.png);
+	}
+
+	.holiday__form {
+		padding: 20px 0 30px;
+		&__body {
+			&-title {
+				max-width: 280px;
+				margin: 0 auto 14px;
+			}
+			&__row {
+				&-form {
+					margin: 0 0 10px 0;
+				}
+				&-btn {
+					width: 300px;
+				}
+			}
+		}
+	}
+}

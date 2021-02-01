@@ -1,0 +1,22 @@
+
+@mixin backgroundImg ($bgs, $bgp, $bgr){
+	background-size: $bgs;
+	background-position: $bgp;
+	background-repeat: $bgr;
+}
+
+@mixin sectionTitle ($ff, $fz, $lh, $cl, $mb){
+	font-family: $ff;
+	font-size: $fz;
+	line-height: $lh;
+	color: $cl;
+	margin-bottom: $mb;
+}
+
+@mixin fontSize ($ff, $fz, $cl){
+	font-family: $ff;
+	font-size: $fz;
+	color: $cl;
+}
+
+
